@@ -1,0 +1,193 @@
+body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #F3B95F;
+    }
+
+    header {
+  	  background: #F3B95F;
+      color: #D04848;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .container {
+      margin-left: 17%;
+      align-items: center;
+      display: flex;
+      gap: 100px;
+      padding: 20px;
+    }
+
+    .wheel-section {
+      text-align: center;
+      position: relative;
+    }
+
+    #wheelCanvas {
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    .pointer {
+      position: absolute;
+      top: 43%;
+      left: 95%;
+      transform: translateY(-50%) rotate(180deg);
+      width: 0;
+      height: 0;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+      border-left: 30px solid #000000;
+    }
+
+    #spinBtn {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .entries-section {
+      background: #D04848;
+      padding: 20px;
+      border-radius: 10px;
+      color: white;
+      width: 300px;
+    }
+
+    .entries-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .entries-header button {
+      margin-left: 5px;
+      border-radius: 5%;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    #nameInput {
+      width: 100%;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    #nameList {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background: white;
+      color: black;
+      min-height: 120px;
+      overflow-y: auto;
+    }
+
+    #nameList li {
+      padding: 5px;
+      border-bottom: 1px solid #666;
+    }
+
+    /* Overlay */
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .overlay-content {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .overlay h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .overlay h2 {
+      font-size: 32px;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+
+	/* === RESPONSIVE UNTUK TAMPILAN HP === */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* ubah dari row ke kolom */
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin: 0; /* hilangkan margin kiri */
+    padding: 10px;
+  }
+
+  .wheel-section {
+    order: 1; /* tetap di atas */
+  }
+
+  #wheelCanvas {
+    width: 80vw;   /* biar fleksibel di layar kecil */
+    height: 80vw;  /* supaya tetap proporsional */
+    max-width: 350px;
+    max-height: 350px;
+  }
+
+  .pointer {
+    top: 163px; /* tepat di atas spinner */
+    left: 300px;
+    transform: translate(-50%, -60%) rotate(90deg);
+    border-left: none;
+    border-top: 30px solid #000000;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+  }
+
+  #spinBtn {
+    display: block;
+    margin: 20px auto 0;
+    font-size: 18px;
+    padding: 12px 25px;
+  }
+
+  .entries-section {
+    order: 2;
+    width: 90%;
+    max-width: 400px;
+    background: #D04848;
+    padding: 20px;
+    border-radius: 12px;
+    color: white;
+  }
+
+  .entries-header {
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+  }
+
+  .entries-header button {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  #nameInput {
+    height: 70px;
+    font-size: 16px;
+  }
+
+  #nameList {
+    max-height: 200px;
+  }
+}
